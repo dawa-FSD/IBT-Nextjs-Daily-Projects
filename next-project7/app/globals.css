@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  --background: #faf8f3;
+  --surface: #ffffff;
+  --ink: #20251f;
+  --muted: #72786f;
+  --green: #234b37;
+  --green-dark: #173727;
+  --gold: #c69746;
+  --border: #e8e5dc;
+  --danger: #a83232;
+  --radius: 18px;
+  --shadow: 0 12px 35px rgba(28, 40, 30, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 11px;
+  padding: 11px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+button:hover,
+.primary-link:hover,
+.secondary-link:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 6vw, 88px);
+  background: rgba(250, 248, 243, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.site-footer {
+  padding: 28px 20px;
+  margin-top: 70px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.hero {
+  min-height: 570px;
+  display: grid;
+  align-items: center;
+  padding: 70px clamp(24px, 9vw, 140px);
+  background:
+    radial-gradient(circle at 80% 30%, #eadbb8 0, transparent 30%),
+    linear-gradient(120deg, #f7f0df, #fbfaf6 65%);
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 12px 0 18px;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.eyebrow {
+  color: #8d6a2f;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.primary-link,
+.primary-button {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: white;
+}
+
+.primary-link:hover,
+.primary-button:hover {
+  background: var(--green-dark);
+  color: white;
+}
+
+.secondary-link,
+.secondary-button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.secondary-button {
+  min-height: 40px;
+}
+
+.page-container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: 54px;
+}
+
+.page-container > h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.dish-grid,
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.dish-card,
+.order-card,
+.auth-card,
+.empty-state {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.dish-card {
+  overflow: hidden;
+}
+
+.dish-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  background: linear-gradient(135deg, #f0e2c6, #d6e1d5);
+  color: var(--green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 4rem;
+}
+
+.dish-placeholder-large {
+  min-height: 340px;
+  border-radius: var(--radius);
+}
+
+.dish-content {
+  padding: 22px;
+}
+
+.dish-content h2 {
+  margin-bottom: 8px;
+}
+
+.dish-content p {
+  min-height: 52px;
+  color: var(--muted);
+}
+
+.dish-footer,
+.order-heading,
+.order-total,
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.dish-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+  margin-top: 25px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.auth-page {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 45px 20px;
+}
+
+.auth-card {
+  width: min(100%, 480px);
+  padding: clamp(24px, 5vw, 42px);
+}
+
+.auth-card h1 {
+  font-size: 2.4rem;
+}
+
+.auth-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.auth-form label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #d8d8cf;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: var(--green);
+}
+
+.auth-form .primary-button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.checkout-card {
+  margin: 0 auto;
+}
+
+.order-card {
+  padding: 24px;
+}
+
+.order-heading h2 {
+  margin: 4px 0;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 99px;
+  background: #e7f2e9;
+  color: #235c37;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.order-items {
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-total {
+  padding: 16px 0;
+}
+
+.danger-button {
+  width: 100%;
+  margin-top: 12px;
+  border: 1px solid #f0caca;
+  background: #fff4f4;
+  color: var(--danger);
+}
+
+.danger-button:hover {
+  background: #ffe6e6;
+}
+
+.empty-state {
+  padding: 42px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .dish-grid,
+  .orders-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dish-detail {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .dish-grid,
+  .orders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header nav {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dish-placeholder-large {
+    min-height: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/* ================================
+   ADDIS EATS — SIGN IN PAGE
+   Professional Navy & Gold Theme
+================================ */
+
+.auth-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(212, 175, 55, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+/* Sign-in card */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 42px 36px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
+  animation: authFadeIn 0.5s ease;
+}
+
+.auth-card h1 {
+  margin: 0 0 10px;
+  color: #10233f;
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.auth-card > p {
+  margin: 0 0 30px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Form layout */
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-card label {
+  margin-top: 8px;
+  color: #24364b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.auth-card input:not([type="hidden"]) {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 15px;
+  color: #10233f;
+  background: #f8fafc;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.auth-card input::placeholder {
+  color: #94a3b8;
+}
+
+.auth-card input:not([type="hidden"]):hover {
+  border-color: #b8c3d1;
+}
+
+.auth-card input:not([type="hidden"]):focus {
+  background: #ffffff;
+  border-color: #c59b2a;
+  box-shadow: 0 0 0 4px rgba(197, 155, 42, 0.15);
+}
+
+/* Sign-in button */
+.auth-card button {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #10233f, #1d3557);
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(16, 35, 63, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.auth-card button:hover {
+  background: linear-gradient(135deg, #c59b2a, #e0b949);
+  color: #10233f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(197, 155, 42, 0.25);
+}
+
+.auth-card button:active {
+  transform: translateY(0);
+}
+
+.auth-card button:focus-visible {
+  outline: 3px solid #e0b949;
+  outline-offset: 4px;
+}
+
+/* Keyboard accessibility */
+.auth-card input:focus-visible {
+  outline: 2px solid #c59b2a;
+  outline-offset: 2px;
+}
+
+/* Entrance animation */
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive design */
+@media (max-width: 480px) {
+  .auth-page {
+    min-height: calc(100vh - 64px);
+    padding: 28px 16px;
+  }
+
+  .auth-card {
+    padding: 32px 22px;
+    border-radius: 18px;
+  }
+
+  .auth-card h1 {
+    font-size: 29px;
+  }
+
+  .auth-card > p {
+    margin-bottom: 24px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .auth-card,
+  .auth-card button,
+  .auth-card input {
+    animation: none;
+    transition: none;
+  }
+}
