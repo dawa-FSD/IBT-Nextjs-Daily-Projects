@@ -1,0 +1,39 @@
+export const dishes = [
+  {
+    id: "doro",
+    name: "Doro Wat",
+    category: "Ethiopian",
+    price: 350,
+  },
+  {
+    id: "shiro",
+
+    name: "Shiro",
+    category: "Ethiopian",
+    price: 200,
+  },
+  {
+    id: "tibs",
+    name: "Tibs",
+    category: "Ethiopian",
+    price: 450,
+  },
+  {
+    id: "pizza",
+    name: "Pizza",
+    category: "Pizza",
+    price: 550,
+  },
+  {
+    id: "burgers",
+    name: "Cheese Burger",
+    category: "Burgers",
+    price: 400,
+  },
+  {
+    id: "juice",
+    name: "Fresh Juice",
+    category: "Drinks",
+    price: 150,
+  },
+];
