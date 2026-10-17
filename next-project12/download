@@ -1,0 +1,7 @@
+# Public URL used for canonical links and metadata
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Add real server-only variables only if your backend requires them.
+# DATABASE_URL=
+# SESSION_SECRET=
+# PAYMENT_SECRET_KEY=
